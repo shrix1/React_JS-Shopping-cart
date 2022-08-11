@@ -6,7 +6,7 @@ const Card = ({ name, price }) => {
     <>
       <section
         className="mt-8 flex font-pop  p-2
-      border border-sky-900 rounded m-auto "
+      border border-sky-900 rounded m-auto"
       >
         <div className="w-[130px] bg-sky-300 rounded">
           <RiTShirt2Line className="text-9xl" />
