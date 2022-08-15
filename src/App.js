@@ -8,15 +8,16 @@ import { useState } from "react";
 
 function App() {
   const [add, setAdd] = useState(0);
-  const [name, setName] = useState([]);
-  const [price, setPrice] = useState([]);
+  const [items, setItems] = useState([]);
+
+  const addCart = (name, price) => {
+    setItems((prev) => [...prev, { name, price }]);
+  };
 
   return (
     <>
       <div>
-        <Appcontext.Provider
-          value={{ add, setAdd, name, setName, price, setPrice }}
-        >
+        <Appcontext.Provider value={{ add, setAdd, items, setItems, addCart }}>
           <BrowserRouter>
             <Nav />
             <Routes>

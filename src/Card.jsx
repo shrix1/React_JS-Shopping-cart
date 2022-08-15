@@ -4,7 +4,7 @@ import Appcontext from "./Context";
 import { RiTShirt2Line } from "react-icons/ri";
 
 const Card = (props) => {
-  const { setAdd, setName, setPrice } = useContext(Appcontext);
+  const { setAdd, addCart } = useContext(Appcontext);
 
   return (
     <>
@@ -25,8 +25,7 @@ const Card = (props) => {
           bg-sky-200 rounded hover:bg-sky-500"
             onClick={() => {
               setAdd((prev) => prev + 1);
-              setName((p) => [...p, props.name]);
-              setPrice((p) => [...p, props.price]);
+              addCart(props.name, props.price);
             }}
           >
             Add to cart
