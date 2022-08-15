@@ -1,10 +1,10 @@
 import { React, useContext } from "react";
 import { RiShoppingCart2Fill } from "react-icons/ri";
 import { Link } from "react-router-dom";
-// import { Cartcontext } from "./Context";
+import Appcontext from "./Context";
 
 const Nav = () => {
-  // const { item } = useContext(Cartcontext);
+  const { add } = useContext(Appcontext);
 
   return (
     <>
@@ -17,7 +17,7 @@ const Nav = () => {
         <Link to={"/checkout"}>
           <div className="flex text-xl mt-2">
             <RiShoppingCart2Fill />
-            <span className="ml-3 -mt-1">0</span>
+            <span className="ml-3 -mt-1">({add})</span>
           </div>
         </Link>
       </nav>

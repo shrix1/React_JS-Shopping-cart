@@ -1,7 +1,11 @@
 import React from "react";
+import { useContext } from "react";
+import Appcontext from "./Context";
 import { RiTShirt2Line } from "react-icons/ri";
 
-const Card = ({ name, price }) => {
+const Card = (props) => {
+  const { setAdd, setName, setPrice } = useContext(Appcontext);
+
   return (
     <>
       <section
@@ -13,12 +17,17 @@ const Card = ({ name, price }) => {
         </div>
         <div className="flex justify-between flex-col ml-5">
           <div>
-            <h1>{name}</h1>
-            <h1>{price} INR</h1>
+            <h1>{props.name}</h1>
+            <h1>{props.price} INR</h1>
           </div>
           <button
             className="p-1.5
           bg-sky-200 rounded hover:bg-sky-500"
+            onClick={() => {
+              setAdd((prev) => prev + 1);
+              setName((p) => [...p, props.name]);
+              setPrice((p) => [...p, props.price]);
+            }}
           >
             Add to cart
           </button>

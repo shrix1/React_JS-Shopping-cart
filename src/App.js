@@ -3,21 +3,28 @@ import Nav from "./Nav";
 import Products from "./Products";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Checkout from "./Checkout";
-import Cartprovider from "./Context";
+import Appcontext from "./Context";
+import { useState } from "react";
 
 function App() {
+  const [add, setAdd] = useState(0);
+  const [name, setName] = useState([]);
+  const [price, setPrice] = useState([]);
+
   return (
     <>
       <div>
-        {/* <Cartprovider> */}
-        <BrowserRouter>
-          <Nav />
-          <Routes>
-            <Route path="/" element={<Products />} />
-            <Route path="/checkout" element={<Checkout />} />
-          </Routes>
-        </BrowserRouter>
-        {/* </Cartprovider> */}
+        <Appcontext.Provider
+          value={{ add, setAdd, name, setName, price, setPrice }}
+        >
+          <BrowserRouter>
+            <Nav />
+            <Routes>
+              <Route path="/" element={<Products />} />
+              <Route path="/checkout" element={<Checkout />} />
+            </Routes>
+          </BrowserRouter>
+        </Appcontext.Provider>
       </div>
     </>
   );
