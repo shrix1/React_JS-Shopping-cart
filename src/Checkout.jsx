@@ -3,13 +3,27 @@ import Appcontext from "./Context";
 import { RiTShirt2Line } from "react-icons/ri";
 
 const Checkout = () => {
-  const { items, setAdd, removeCart } = useContext(Appcontext);
+  const { items, setAdd, removeItems } = useContext(Appcontext);
 
   return (
     <>
       <h1 className="text-2xl text-center font-pop font-bold mt-4">
-        Checkout here{" "}
+        Checkout here
       </h1>
+
+      {items.length === 0 ? (
+        <h1 className="text-2xl text-center font-pop font-bold mt-4">
+          cart is empty
+        </h1>
+      ) : (
+        <h1 className="text-2xl text-center font-pop mt-4">
+          your cart has{" "}
+          <span className="text-2xl text-center font-pop font-bold">
+            {items.length}
+          </span>{" "}
+          items
+        </h1>
+      )}
 
       {items.map((item, index) => (
         <section
@@ -31,7 +45,7 @@ const Checkout = () => {
           bg-sky-200 rounded hover:bg-sky-500"
               onClick={() => {
                 setAdd((prev) => prev - 1);
-                removeCart(item._id);
+                removeItems(item._id);
               }}
             >
               remove

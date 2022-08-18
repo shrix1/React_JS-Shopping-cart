@@ -12,25 +12,17 @@ function App() {
 
   const addCart = (name, price, _id) => {
     setItems((prev) => [...prev, { name, price, _id }]);
-    console.log("in add  card");
   };
 
-  console.log(items);
-
-  const removeCart = (ids) => {
-    console.log(ids);
-    items.filter((i) => {
-      console.log(i._id);
-      return ids !== i._id;
-    });
-    console.log("in remove card");
+  const removeItems = (ids) => {
+    setItems(items.filter((i) => ids !== i._id));
   };
 
   return (
     <>
       <div>
         <Appcontext.Provider
-          value={{ add, setAdd, items, addCart, removeCart }}
+          value={{ add, items, setAdd, addCart, removeItems }}
         >
           <BrowserRouter>
             <Nav />
