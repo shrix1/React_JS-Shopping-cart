@@ -17,7 +17,7 @@ function App() {
   return (
     <>
       <div>
-        <Appcontext.Provider value={{ add, setAdd, items, setItems, addCart }}>
+        <Appcontext.Provider value={{ add, setAdd, items, addCart }}>
           <BrowserRouter>
             <Nav />
             <Routes>
