@@ -17,7 +17,7 @@ const Nav = () => {
         <Link to={"/checkout"}>
           <div className="flex text-xl mt-2">
             <RiShoppingCart2Fill />
-            <span className="ml-3 -mt-1">({add})</span>
+            <span className="ml-3 -mt-1">{add}</span>
           </div>
         </Link>
       </nav>

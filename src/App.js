@@ -10,14 +10,28 @@ function App() {
   const [add, setAdd] = useState(0);
   const [items, setItems] = useState([]);
 
-  const addCart = (name, price) => {
-    setItems((prev) => [...prev, { name, price }]);
+  const addCart = (name, price, _id) => {
+    setItems((prev) => [...prev, { name, price, _id }]);
+    console.log("in add  card");
+  };
+
+  console.log(items);
+
+  const removeCart = (ids) => {
+    console.log(ids);
+    items.filter((i) => {
+      console.log(i._id);
+      return ids !== i._id;
+    });
+    console.log("in remove card");
   };
 
   return (
     <>
       <div>
-        <Appcontext.Provider value={{ add, setAdd, items, addCart }}>
+        <Appcontext.Provider
+          value={{ add, setAdd, items, addCart, removeCart }}
+        >
           <BrowserRouter>
             <Nav />
             <Routes>

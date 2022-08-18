@@ -19,13 +19,14 @@ const Card = (props) => {
           <div>
             <h1>{props.name}</h1>
             <h1>{props.price} INR</h1>
+            <h1>{props._id}</h1>
           </div>
           <button
             className="p-1.5
           bg-sky-200 rounded hover:bg-sky-500"
             onClick={() => {
               setAdd((prev) => prev + 1);
-              addCart(props.name, props.price);
+              addCart(props.name, props.price, props._id);
             }}
           >
             Add to cart
