@@ -12,8 +12,8 @@ const Checkout = () => {
       </h1>
 
       {items.length === 0 ? (
-        <h1 className="text-2xl text-center font-pop font-bold mt-4">
-          cart is empty
+        <h1 className="text-2xl text-center font-pop mt-4">
+          Your cart is <span className="font-bold underline">empty</span>
         </h1>
       ) : (
         <h1 className="text-2xl text-center font-pop mt-4">
@@ -42,7 +42,7 @@ const Checkout = () => {
             </div>
             <button
               className="p-1.5
-          bg-sky-200 rounded hover:bg-sky-500"
+          bg-sky-200 rounded hover:bg-sky-500 font-bold"
               onClick={() => {
                 setAdd((prev) => prev - 1);
                 removeItems(item._id);
