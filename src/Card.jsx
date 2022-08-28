@@ -26,7 +26,7 @@ const Card = (props) => {
           bg-sky-200 rounded hover:bg-sky-500"
             onClick={() => {
               setAdd((prev) => prev + 1);
-              sameClick(props._id);
+              // sameClick(props._id);
               addCart(props.name, props.price, props._id);
             }}
           >

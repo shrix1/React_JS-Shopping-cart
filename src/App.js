@@ -9,15 +9,23 @@ import { useState } from "react";
 function App() {
   const [add, setAdd] = useState(0);
   const [items, setItems] = useState([]);
+  // const [moreItems, setMoreItems] = useState(1);
 
-  const sameClick = (id) => {};
+  // const sameClick = (id) => {
+  //   console.log("sameClick fn");
+  //   items.map((item) => {
+  //     console.log(item._id, id);
+  //     if (item._id === id) {
+  //       setMoreItems((prev) => prev + 1);
+  //     }
+  //   });
+  // };
 
   const addCart = (name, price, _id) => {
     setItems((prev) => [...prev, { name, price, _id }]);
   };
 
   const removeItems = (ids) => {
-    console.log(ids);
     setItems(items.filter((i) => ids !== i._id));
   };
 
@@ -25,7 +33,15 @@ function App() {
     <>
       <div>
         <Appcontext.Provider
-          value={{ add, items, setAdd, addCart, removeItems, sameClick }}
+          value={{
+            add,
+            items,
+            setAdd,
+            addCart,
+            removeItems,
+            // moreItems,
+            // sameClick,
+          }}
         >
           <BrowserRouter>
             <Nav />
