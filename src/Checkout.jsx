@@ -38,7 +38,8 @@ const Checkout = () => {
             <div className="font-bold">
               <h1>{item.name}</h1>
               <h1>{item.price} INR</h1>
-              <h1>{item._id} </h1>
+              <h1>1</h1>
+              {/* <h1>{item._id} </h1> */}
             </div>
             <button
               className="p-1.5

@@ -10,11 +10,14 @@ function App() {
   const [add, setAdd] = useState(0);
   const [items, setItems] = useState([]);
 
+  const sameClick = (id) => {};
+
   const addCart = (name, price, _id) => {
     setItems((prev) => [...prev, { name, price, _id }]);
   };
 
   const removeItems = (ids) => {
+    console.log(ids);
     setItems(items.filter((i) => ids !== i._id));
   };
 
@@ -22,7 +25,7 @@ function App() {
     <>
       <div>
         <Appcontext.Provider
-          value={{ add, items, setAdd, addCart, removeItems }}
+          value={{ add, items, setAdd, addCart, removeItems, sameClick }}
         >
           <BrowserRouter>
             <Nav />

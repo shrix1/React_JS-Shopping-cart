@@ -1,7 +1,7 @@
 import Card from "./Card";
 
 const Products = () => {
-  const prod = [
+  const products = [
     {
       name: "T-shirt",
       price: "100 ",
@@ -27,13 +27,18 @@ const Products = () => {
       price: "500 ",
       _id: 4,
     },
+    {
+      name: "shorts",
+      price: "600 ",
+      _id: 5,
+    },
   ];
 
   return (
     <>
       <div className="flex flex-wrap md:w-[800px]  lg:w-[1000px] m-auto font-bold">
-        {prod.map((p, i) => (
-          <Card name={p.name} key={i} price={p.price} _id={p._id} />
+        {products.map((p, index) => (
+          <Card name={p.name} key={index} price={p.price} _id={p._id} />
         ))}
       </div>
     </>
