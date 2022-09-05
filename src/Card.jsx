@@ -13,7 +13,7 @@ const Card = (props) => {
   return (
     <>
       <section
-        className="mt-8 flex font-pop  p-2
+        className="mt-8 flex font-pop p-2
       border border-sky-900 rounded m-auto"
       >
         <div className="w-[130px] bg-sky-300 rounded">
