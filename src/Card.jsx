@@ -4,11 +4,7 @@ import Appcontext from "./Context";
 import { RiTShirt2Line } from "react-icons/ri";
 
 const Card = (props) => {
-  const {
-    setAdd,
-    addCart,
-    // sameClick
-  } = useContext(Appcontext);
+  const { setAdd, addCart, sameClick } = useContext(Appcontext);
 
   return (
     <>
