@@ -36,7 +36,7 @@ const Products = () => {
 
   return (
     <>
-      <div className="flex flex-wrap md:w-[800px]  lg:w-[1000px] m-auto font-bold">
+      <div className="flex flex-wrap md:w-[750px]  lg:w-[1000px] m-auto font-bold">
         {products.map((p, index) => (
           <Card name={p.name} key={index} price={p.price} _id={p._id} />
         ))}

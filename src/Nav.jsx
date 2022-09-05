@@ -8,19 +8,35 @@ const Nav = () => {
 
   return (
     <>
-      <nav className="flex justify-around p-5 bg-sky-300 font-semibold">
-        <header className="text-2xl font-pop">
-          <Link to={"/"}>
-            <h1>Wear it</h1>
+      <main
+        className="flex flex-col bg-sky-300 h-[120px] 
+      lg:flex-row lg:justify-around lg:items-center"
+      >
+        <nav
+          className="flex justify-around lg:justify-between 
+        p-5 font-semibold"
+        >
+          <header className="text-2xl font-pop">
+            <Link to={"/"}>
+              <h1>Wear it</h1>
+            </Link>
+          </header>
+          <Link to={"/checkout"}>
+            <div className="flex text-xl mt-2 ml-10">
+              <RiShoppingCart2Fill />
+              <span className="ml-3 -mt-1">{add}</span>
+            </div>
           </Link>
-        </header>
-        <Link to={"/checkout"}>
-          <div className="flex text-xl mt-2">
-            <RiShoppingCart2Fill />
-            <span className="ml-3 -mt-1">{add}</span>
-          </div>
-        </Link>
-      </nav>
+        </nav>
+        <section>
+          <input
+            type="text"
+            placeholder="search"
+            className="p-1 font-pop border w-[200px] m-auto 
+            rounded border-sky-500 "
+          />
+        </section>
+      </main>
     </>
   );
 };
