@@ -1,10 +1,10 @@
-import { React, useContext } from "react";
+import { React, useContext, useState } from "react";
 import { RiShoppingCart2Fill } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import Appcontext from "./Context";
 
 const Nav = () => {
-  const { add } = useContext(Appcontext);
+  const { add, value, setValue } = useContext(Appcontext);
 
   return (
     <>
@@ -22,18 +22,20 @@ const Nav = () => {
             </Link>
           </header>
           <Link to={"/checkout"}>
-            <div className="flex text-xl mt-2 ml-10">
+            <div className="flex text-xl mt-2 lg:ml-10">
               <RiShoppingCart2Fill />
               <span className="ml-3 -mt-1">{add}</span>
             </div>
           </Link>
         </nav>
-        <section>
+        <section className="text-center lg:text-justify">
           <input
             type="text"
             placeholder="search"
-            className="p-1 font-pop border w-[200px] m-auto 
-            rounded border-sky-500 "
+            className="p-1 font-pop border w-[200px] m-auto
+            rounded border-sky-500 outline-none hover:border-black"
+            onChange={(e) => setValue(e.target.value)}
+            value={value}
           />
         </section>
       </main>

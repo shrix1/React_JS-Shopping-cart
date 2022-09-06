@@ -1,9 +1,12 @@
 import Card from "./Card";
+import { useContext } from "react";
+import Appcontext from "./Context";
 
 const Products = () => {
+  const { value } = useContext(Appcontext);
   const products = [
     {
-      name: "T-shirt",
+      name: "Tshirt",
       price: "100 ",
       _id: 0,
     },
@@ -37,9 +40,18 @@ const Products = () => {
   return (
     <>
       <div className="flex flex-wrap md:w-[750px]  lg:w-[1000px] m-auto font-bold">
-        {products.map((p, index) => (
-          <Card name={p.name} key={index} price={p.price} _id={p._id} />
-        ))}
+        {/* {search} */}
+        {products
+          .filter((prod) => {
+            if (value === "") {
+              return prod;
+            } else if (value.toLowerCase().includes(prod.name.toLowerCase())) {
+              return prod;
+            }
+          })
+          .map((p, index) => (
+            <Card name={p.name} key={index} price={p.price} _id={p._id} />
+          ))}
       </div>
     </>
   );

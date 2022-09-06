@@ -9,6 +9,7 @@ import { useState } from "react";
 function App() {
   const [add, setAdd] = useState(0);
   const [items, setItems] = useState([]);
+  const [value, setValue] = useState("");
 
   // const [moreItems, setMoreItems] = useState(1);
   // const sameClick = (id) => {
@@ -41,6 +42,8 @@ function App() {
             removeItems,
             // moreItems,
             // sameClick,
+            value,
+            setValue,
           }}
         >
           <BrowserRouter>
