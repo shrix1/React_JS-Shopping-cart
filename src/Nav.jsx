@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Appcontext from "./Context";
 
 const Nav = () => {
-  const { add, value, setValue } = useContext(Appcontext);
+  const { value, setValue, items } = useContext(Appcontext);
 
   return (
     <>
@@ -24,7 +24,7 @@ const Nav = () => {
           <Link to={"/checkout"}>
             <div className="flex text-xl mt-2 lg:ml-10">
               <RiShoppingCart2Fill />
-              <span className="ml-3 -mt-1">{add}</span>
+              <span className="ml-3 -mt-1">{items.length}</span>
             </div>
           </Link>
         </nav>

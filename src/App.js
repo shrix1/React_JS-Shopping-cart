@@ -8,7 +8,7 @@ import { useState } from "react";
 
 function App() {
   const [add, setAdd] = useState(0); //cart adding
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState([]); //cart store
   const [value, setValue] = useState(""); //search
 
   // const [moreItems, setMoreItems] = useState(1);
