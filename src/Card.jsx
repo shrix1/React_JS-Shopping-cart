@@ -22,8 +22,8 @@ const Card = (props) => {
         <div className="flex justify-between flex-col ml-5">
           <div>
             <h1>{props.name}</h1>
-            <h1>{props.price} INR</h1>
-            <h1>{props._id}</h1>
+            <h1>$ {props.price}</h1>
+            {/* <h1>{props._id}</h1> */}
           </div>
           <button
             className="p-1.5

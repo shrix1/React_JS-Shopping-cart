@@ -7,9 +7,9 @@ import Appcontext from "./Context";
 import { useState } from "react";
 
 function App() {
-  const [add, setAdd] = useState(0);
+  const [add, setAdd] = useState(0); //cart adding
   const [items, setItems] = useState([]);
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState(""); //search
 
   // const [moreItems, setMoreItems] = useState(1);
   // const sameClick = (id) => {
