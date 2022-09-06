@@ -3,7 +3,12 @@ import Appcontext from "./Context";
 import { RiTShirt2Line } from "react-icons/ri";
 
 const Checkout = () => {
-  const { items, setAdd, removeItems, moreItems } = useContext(Appcontext);
+  const {
+    items,
+    // setAdd,
+    removeItems,
+    moreItems,
+  } = useContext(Appcontext);
 
   return (
     <>
@@ -45,8 +50,8 @@ const Checkout = () => {
               className="p-1.5
           bg-sky-200 rounded hover:bg-sky-500 font-bold"
               onClick={() => {
-                setAdd((prev) => prev - 1);
                 removeItems(item._id);
+                // setAdd((p) => p - 1);
               }}
             >
               remove

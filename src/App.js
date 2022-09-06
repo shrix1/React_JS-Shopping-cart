@@ -12,18 +12,27 @@ function App() {
   const [value, setValue] = useState(""); //search
 
   // const [moreItems, setMoreItems] = useState(1);
-  // const sameClick = (id) => {
+  // const sameClick = (nameData) => {
   //   console.log("sameClick fn");
   //   items.map((item) => {
-  //     console.log(item._id, id);
-  //     if (item._id === id) {
+  //     // console.log(item.name, nameData);
+  //     if (item.name === nameData) {
   //       setMoreItems((prev) => prev + 1);
   //     }
   //   });
   // };
 
   const addCart = (name, price, _id) => {
-    setItems((prev) => [...prev, { name, price, _id }]);
+    setItems((prev) => {
+      return [...prev, { name, price, _id }];
+      // items.filter((prev) => {
+      //   if (prev.name === name) {
+      //     return [{ name, price, _id }];
+      //   } else {
+      //     return [...prev, { name, price, _id }];
+      //   }
+      // });
+    });
   };
 
   const removeItems = (ids) => {
