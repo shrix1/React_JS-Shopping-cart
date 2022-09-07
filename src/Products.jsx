@@ -7,32 +7,32 @@ const Products = () => {
   const products = [
     {
       name: "Tshirt",
-      price: "100 ",
+      price: 100,
       _id: 0,
     },
     {
       name: "Shirt",
-      price: "200 ",
+      price: 200,
       _id: 1,
     },
     {
       name: "Vest",
-      price: "300 ",
+      price: 300,
       _id: 2,
     },
     {
       name: "Pant",
-      price: "400 ",
+      price: 400,
       _id: 3,
     },
     {
       name: "Inner Wear",
-      price: "500 ",
+      price: 500,
       _id: 4,
     },
     {
       name: "shorts",
-      price: "600 ",
+      price: 600,
       _id: 5,
     },
   ];

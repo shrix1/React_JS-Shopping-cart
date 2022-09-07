@@ -1,9 +1,9 @@
-import { React, useContext, useState, useEffect } from "react";
+import { React, useContext } from "react";
 import Appcontext from "./Context";
 import { RiTShirt2Line } from "react-icons/ri";
 
 const Checkout = () => {
-  // const [cost, setCost] = useState(0);
+  // const [cost, setCost] = useState();
 
   const {
     items,
@@ -11,22 +11,6 @@ const Checkout = () => {
     removeItems,
     // moreItems,
   } = useContext(Appcontext);
-
-  // useEffect(() => {
-  //   for (let i = 0; i <= items.length; i++) {
-  //     console.log(items[i]?.price);
-  //     setCost(parseInt(items[i]?.price));
-  //     console.log(cost);
-  //   }
-  // }, [cost, items]);
-
-  // useEffect(() => {
-  //   items
-  //     .map((i) => i)
-  //     .reduce((curr, acc) => {
-  //       setCost((curr += parseInt(acc.price)));
-  //     }, 0);
-  // }, [items]);
 
   return (
     <>
@@ -47,37 +31,46 @@ const Checkout = () => {
         </h1>
       )}
 
-      {items.map((item, index) => (
-        <section
-          className="mt-8 flex font-pop  p-2
+      {items.map((item, index) => {
+        return (
+          <section
+            className="mt-8 flex font-pop  p-2
       border border-sky-900 rounded m-auto w-[250px]"
-          key={index}
-        >
-          <div className="w-[130px] bg-sky-300 rounded">
-            <RiTShirt2Line className="text-9xl" />
-          </div>
-          <div className="flex justify-between flex-col ml-5 ">
-            <div className="font-bold">
-              <h1>{item.name}</h1>
-              <h1>$ {item.price}</h1>
-              {/* <h1>c : {moreItems}</h1> */}
-              {/* <h1>{item._id} </h1> */}
+            key={index}
+          >
+            <div className="w-[130px] bg-sky-300 rounded">
+              <RiTShirt2Line className="text-9xl" />
             </div>
-            <button
-              className="p-1.5 bg-sky-200 rounded hover:bg-sky-500 
+            <div className="flex justify-between flex-col ml-5 ">
+              <div className="font-bold">
+                <h1>{item.name}</h1>
+                <h1>$ {item.price}</h1>
+                {/* <h1>{item._id} </h1> */}
+              </div>
+              <button
+                className="p-1.5 bg-sky-200 rounded hover:bg-sky-500 
               font-bold"
-              onClick={() => {
-                removeItems(item._id);
-                // setAdd((p) => p - 1);
-              }}
-            >
-              remove
-            </button>
-          </div>
-        </section>
-      ))}
+                onClick={() => {
+                  removeItems(item._id);
+                  // setAdd((p) => p - 1);
+                }}
+              >
+                remove
+              </button>
+            </div>
+          </section>
+        );
+      })}
 
-      {/* <h1>{cost}</h1> */}
+      <h1 className="text-center text-2xl font-pop mt-6">
+        Total price is{" "}
+        <span className="underline font-bold">
+          $
+          {items.reduce((acc, curr) => {
+            return acc + curr.price;
+          }, 0)}
+        </span>
+      </h1>
     </>
   );
 };
