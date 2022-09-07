@@ -3,8 +3,6 @@ import Appcontext from "./Context";
 import { RiTShirt2Line } from "react-icons/ri";
 
 const Checkout = () => {
-  // const [cost, setCost] = useState();
-
   const {
     items,
     // setAdd,
@@ -76,7 +74,6 @@ const Checkout = () => {
               font-bold"
                     onClick={() => {
                       removeItems(item._id);
-                      // setAdd((p) => p - 1);
                     }}
                   >
                     remove

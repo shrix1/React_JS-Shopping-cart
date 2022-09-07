@@ -7,7 +7,6 @@ import Appcontext from "./Context";
 import { useState } from "react";
 
 function App() {
-  const [add, setAdd] = useState(0); //cart adding
   const [items, setItems] = useState([]); //cart store
   const [value, setValue] = useState(""); //search
 
@@ -44,9 +43,7 @@ function App() {
       <div>
         <Appcontext.Provider
           value={{
-            add,
             items,
-            setAdd,
             addCart,
             removeItems,
             // moreItems,

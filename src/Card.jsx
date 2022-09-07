@@ -5,7 +5,6 @@ import { RiTShirt2Line } from "react-icons/ri";
 
 const Card = (props) => {
   const {
-    setAdd,
     addCart,
     //  sameClick
   } = useContext(Appcontext);
@@ -29,8 +28,6 @@ const Card = (props) => {
             className="p-1.5
           bg-sky-200 rounded hover:bg-sky-500"
             onClick={() => {
-              setAdd((prev) => prev + 1);
-              // sameClick(props.name);
               addCart(props.name, props.price, props._id);
             }}
           >
