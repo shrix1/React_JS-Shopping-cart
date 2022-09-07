@@ -1,21 +1,38 @@
-import { React, useContext } from "react";
+import { React, useContext, useState, useEffect } from "react";
 import Appcontext from "./Context";
 import { RiTShirt2Line } from "react-icons/ri";
 
 const Checkout = () => {
+  // const [cost, setCost] = useState(0);
+
   const {
     items,
     // setAdd,
     removeItems,
-    moreItems,
+    // moreItems,
   } = useContext(Appcontext);
+
+  // useEffect(() => {
+  //   for (let i = 0; i <= items.length; i++) {
+  //     console.log(items[i]?.price);
+  //     setCost(parseInt(items[i]?.price));
+  //     console.log(cost);
+  //   }
+  // }, [cost, items]);
+
+  // useEffect(() => {
+  //   items
+  //     .map((i) => i)
+  //     .reduce((curr, acc) => {
+  //       setCost((curr += parseInt(acc.price)));
+  //     }, 0);
+  // }, [items]);
 
   return (
     <>
       <h1 className="text-2xl text-center font-pop font-bold mt-4">
         Checkout here
       </h1>
-
       {items.length === 0 ? (
         <h1 className="text-2xl text-center font-pop mt-4">
           Your cart is <span className="font-bold underline">empty</span>
@@ -42,13 +59,13 @@ const Checkout = () => {
           <div className="flex justify-between flex-col ml-5 ">
             <div className="font-bold">
               <h1>{item.name}</h1>
-              <h1>{item.price} INR</h1>
-              <h1>c : {moreItems}</h1>
+              <h1>$ {item.price}</h1>
+              {/* <h1>c : {moreItems}</h1> */}
               {/* <h1>{item._id} </h1> */}
             </div>
             <button
-              className="p-1.5
-          bg-sky-200 rounded hover:bg-sky-500 font-bold"
+              className="p-1.5 bg-sky-200 rounded hover:bg-sky-500 
+              font-bold"
               onClick={() => {
                 removeItems(item._id);
                 // setAdd((p) => p - 1);
@@ -59,6 +76,8 @@ const Checkout = () => {
           </div>
         </section>
       ))}
+
+      {/* <h1>{cost}</h1> */}
     </>
   );
 };
