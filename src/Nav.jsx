@@ -12,6 +12,7 @@ const Nav = () => {
         className="flex flex-col bg-sky-300 h-[90px] 
       lg:flex-row lg:justify-around lg:items-center mb-4"
       >
+        {/* navContent */}
         <nav
           className="flex justify-around lg:justify-between 
         p-5 font-semibold"
@@ -21,6 +22,7 @@ const Nav = () => {
               <h1>Wear it</h1>
             </Link>
           </header>
+
           <Link to={"/checkout"}>
             <div className="flex text-xl mt-2 lg:ml-10">
               <RiShoppingCart2Fill />
@@ -29,18 +31,21 @@ const Nav = () => {
           </Link>
         </nav>
 
+        {/* .search */}
         <section className="text-center lg:text-justify flex">
           <input
             type="text"
             placeholder="search"
-            className="p-1 font-pop border w-[200px] m-auto
-            rounded border-sky-500 outline-none hover:border-black"
+            className="p-1 font-pop border-2 w-[200px] m-auto
+            rounded border-sky-300 outline-none hover:border-gray-500
+            pr-3"
             onChange={(e) => setValue(e.target.value)}
             value={value}
           />
+
           <RiSearch2Line
             className="absolute lg:right-[390px]
-          right-[150px] mt-2 text-gray-600"
+          right-[155px] mt-[9px] text-gray-600"
           />
         </section>
       </main>
