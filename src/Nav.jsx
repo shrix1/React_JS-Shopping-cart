@@ -45,7 +45,7 @@ const Nav = () => {
 
           <RiSearch2Line
             className="absolute lg:right-[390px]
-          right-[155px] mt-[9px] text-gray-600"
+          right-[160px] mt-[9px] text-gray-600"
           />
         </section>
       </main>

@@ -12,7 +12,7 @@ const Checkout = () => {
 
   return (
     <>
-      <h1 className="text-2xl text-center font-pop font-bold mt-4">
+      <h1 className="text-2xl text-center font-pop font-bold mt-9">
         Checkout here
       </h1>
       {items.length === 0 ? (

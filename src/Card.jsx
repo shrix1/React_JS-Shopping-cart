@@ -1,5 +1,5 @@
 import React from "react";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import Appcontext from "./Context";
 import { RiTShirt2Line } from "react-icons/ri";
 
@@ -8,6 +8,8 @@ const Card = (props) => {
     addCart,
     //  sameClick
   } = useContext(Appcontext);
+
+  // const [added, setAddded] = useState(false);
 
   return (
     <>
@@ -24,11 +26,13 @@ const Card = (props) => {
             <h1>$ {props.price}</h1>
             {/* <h1>{props._id}</h1> */}
           </div>
+
           <button
             className="p-1.5
           bg-sky-200 rounded hover:bg-sky-500"
             onClick={() => {
               addCart(props.name, props.price, props._id);
+              // setAddded(true);
             }}
           >
             Add to cart
