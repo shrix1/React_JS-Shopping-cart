@@ -37,8 +37,8 @@ const Nav = () => {
             type="text"
             placeholder="search"
             className="p-1 font-pop border-2 w-[200px] m-auto
-            rounded border-sky-300 outline-none hover:border-gray-500
-            pr-3"
+            rounded-md border-sky-300 outline-none hover:border-gray-500
+            pr-3 "
             onChange={(e) => setValue(e.target.value)}
             value={value}
             title="search items"

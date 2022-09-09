@@ -15,7 +15,7 @@ const Checkout = () => {
         className="lg:flex lg:justify-evenly lg:mt-[14px] gap-2 
       flex-row-reverse"
       >
-        {/* payment */}
+        {/*-----------------payment------------------ */}
         <section
           className="text-center font-pop lg:border-2 border-sky-200
         lg:w-[400px] //lg:h-[700px] rounded-md flex flex-col items-center 
@@ -40,7 +40,7 @@ const Checkout = () => {
           </button>
         </section>
 
-        {/* cartList */}
+        {/*--------------------cartList----------------------*/}
         <div
           className="lg:flex justify-between gap-1 flex-wrap lg:max-h-[1000px]
         lg:border-2 border-sky-200 lg:w-[1000px] rounded-md 
