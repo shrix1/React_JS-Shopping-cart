@@ -1,15 +1,10 @@
 import React from "react";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import Appcontext from "./Context";
 import { RiTShirt2Line } from "react-icons/ri";
 
 const Card = (props) => {
-  const {
-    addCart,
-    //  sameClick
-  } = useContext(Appcontext);
-
-  // const [added, setAddded] = useState(false);
+  const { addCart } = useContext(Appcontext);
 
   return (
     <>
@@ -18,7 +13,10 @@ const Card = (props) => {
       border border-sky-900 rounded m-auto"
       >
         <div className="w-[130px] bg-sky-300 rounded">
-          <RiTShirt2Line className="text-9xl" />
+          <RiTShirt2Line
+            className="text-9xl text-gray-900"
+            title={props.name}
+          />
         </div>
         <div className="flex justify-between flex-col ml-5">
           <div>
@@ -32,8 +30,8 @@ const Card = (props) => {
           bg-sky-200 rounded hover:bg-sky-500"
             onClick={() => {
               addCart(props.name, props.price, props._id);
-              // setAddded(true);
             }}
+            title="add to cart"
           >
             Add to cart
           </button>

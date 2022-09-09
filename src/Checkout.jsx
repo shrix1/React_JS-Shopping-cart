@@ -3,31 +3,13 @@ import Appcontext from "./Context";
 import { RiTShirt2Line } from "react-icons/ri";
 
 const Checkout = () => {
-  const {
-    items,
-    // setAdd,
-    removeItems,
-    // moreItems,
-  } = useContext(Appcontext);
+  const { items, removeItems } = useContext(Appcontext);
 
   return (
     <>
-      <h1 className="text-2xl text-center font-pop font-bold mt-9">
+      <h1 className="text-2xl text-center font-pop font-bold mt-9 lg:mb-9">
         Checkout here
       </h1>
-      {/* {items.length === 0 ? (
-        <h1 className="text-2xl text-center font-pop mt-4">
-          Your cart is <span className="font-bold underline">empty</span>
-        </h1>
-      ) : (
-        <h1 className="text-2xl text-center font-pop mt-4">
-          your cart has{" "}
-          <span className="text-2xl text-center font-pop font-bold">
-            {items.length}
-          </span>{" "}
-          items
-        </h1>
-      )} */}
 
       <main
         className="lg:flex lg:justify-evenly lg:mt-[14px] gap-2 
@@ -70,7 +52,7 @@ const Checkout = () => {
             justify-center lg:w-[1000px]"
             >
               Your cart is&nbsp;
-              <span className="font-bold underline"> empty</span>
+              <span className="font-bold underline">empty</span>
             </h1>
           ) : (
             items.map((item, index) => {
@@ -81,20 +63,23 @@ const Checkout = () => {
                   key={index}
                 >
                   <div className="w-[130px] bg-sky-300 rounded">
-                    <RiTShirt2Line className="text-9xl" />
+                    <RiTShirt2Line className="text-9xl" title={item.name} />
                   </div>
+
                   <div className="flex justify-between flex-col ml-5 ">
                     <div className="font-bold">
                       <h1>{item.name}</h1>
                       <h1>$ {item.price}</h1>
                       {/* <h1>{item._id} </h1> */}
                     </div>
+
                     <button
                       className="p-1.5 bg-sky-200 rounded hover:bg-sky-500 
-              font-bold"
+                        font-bold"
                       onClick={() => {
                         removeItems(item._id);
                       }}
+                      title="remove item"
                     >
                       remove
                     </button>

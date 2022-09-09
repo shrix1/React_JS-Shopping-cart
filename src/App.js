@@ -7,31 +7,11 @@ import Appcontext from "./Context";
 import { useState } from "react";
 
 function App() {
-  const [items, setItems] = useState([]); //cart store
-  const [value, setValue] = useState(""); //search
-
-  // const [moreItems, setMoreItems] = useState(1);
-  // const sameClick = (nameData) => {
-  //   console.log("sameClick fn");
-  //   items.map((item) => {
-  //     // console.log(item.name, nameData);
-  //     if (item.name === nameData) {
-  //       setMoreItems((prev) => prev + 1);
-  //     }
-  //   });
-  // };
+  const [items, setItems] = useState([]); //addToCart
+  const [value, setValue] = useState(""); //searchFlter
 
   const addCart = (name, price, _id) => {
-    setItems((prev) => {
-      return [...prev, { name, price, _id }];
-      // items.filter((prev) => {
-      //   if (prev.name === name) {
-      //     return [{ name, price, _id }];
-      //   } else {
-      //     return [...prev, { name, price, _id }];
-      //   }
-      // });
-    });
+    setItems((prev) => [...prev, { name, price, _id }]);
   };
 
   const removeItems = (ids) => {
@@ -46,8 +26,6 @@ function App() {
             items,
             addCart,
             removeItems,
-            // moreItems,
-            // sameClick,
             value,
             setValue,
           }}
