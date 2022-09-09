@@ -15,7 +15,7 @@ const Checkout = () => {
       <h1 className="text-2xl text-center font-pop font-bold mt-9">
         Checkout here
       </h1>
-      {items.length === 0 ? (
+      {/* {items.length === 0 ? (
         <h1 className="text-2xl text-center font-pop mt-4">
           Your cart is <span className="font-bold underline">empty</span>
         </h1>
@@ -27,11 +27,18 @@ const Checkout = () => {
           </span>{" "}
           items
         </h1>
-      )}
+      )} */}
 
-      <main className="lg:flex lg:justify-evenly lg:mt-[14px] gap-2 flex-row-reverse">
+      <main
+        className="lg:flex lg:justify-evenly lg:mt-[14px] gap-2 
+      flex-row-reverse"
+      >
         {/* payment */}
-        <section className="text-center font-pop">
+        <section
+          className="text-center font-pop lg:border-2 border-sky-200
+        lg:w-[400px] //lg:h-[700px] rounded-md flex flex-col items-center 
+        justify-center"
+        >
           <h1 className="text-center text-2xl mt-6">
             Total price is{" "}
             <span className="underline font-bold">
@@ -52,36 +59,50 @@ const Checkout = () => {
         </section>
 
         {/* cartList */}
-        <div className="lg:flex justify-between gap-1 flex-wrap lg:w-[1000px] ">
-          {items.map((item, index) => {
-            return (
-              <section
-                className="mt-8 flex font-pop p-2
+        <div
+          className="lg:flex justify-between gap-1 flex-wrap lg:max-h-[1000px]
+        lg:border-2 border-sky-200 lg:w-[1000px] rounded-md 
+        lg:min-h-[700px]"
+        >
+          {items.length === 0 ? (
+            <h1
+              className="text-2xl font-pop mt-4 font-light flex items-center 
+            justify-center lg:w-[1000px]"
+            >
+              Your cart is&nbsp;
+              <span className="font-bold underline"> empty</span>
+            </h1>
+          ) : (
+            items.map((item, index) => {
+              return (
+                <section
+                  className="mt-8 flex font-pop p-2
                 border border-sky-900 rounded m-auto w-[250px]"
-                key={index}
-              >
-                <div className="w-[130px] bg-sky-300 rounded">
-                  <RiTShirt2Line className="text-9xl" />
-                </div>
-                <div className="flex justify-between flex-col ml-5 ">
-                  <div className="font-bold">
-                    <h1>{item.name}</h1>
-                    <h1>$ {item.price}</h1>
-                    {/* <h1>{item._id} </h1> */}
+                  key={index}
+                >
+                  <div className="w-[130px] bg-sky-300 rounded">
+                    <RiTShirt2Line className="text-9xl" />
                   </div>
-                  <button
-                    className="p-1.5 bg-sky-200 rounded hover:bg-sky-500 
+                  <div className="flex justify-between flex-col ml-5 ">
+                    <div className="font-bold">
+                      <h1>{item.name}</h1>
+                      <h1>$ {item.price}</h1>
+                      {/* <h1>{item._id} </h1> */}
+                    </div>
+                    <button
+                      className="p-1.5 bg-sky-200 rounded hover:bg-sky-500 
               font-bold"
-                    onClick={() => {
-                      removeItems(item._id);
-                    }}
-                  >
-                    remove
-                  </button>
-                </div>
-              </section>
-            );
-          })}
+                      onClick={() => {
+                        removeItems(item._id);
+                      }}
+                    >
+                      remove
+                    </button>
+                  </div>
+                </section>
+              );
+            })
+          )}
         </div>
       </main>
     </>
