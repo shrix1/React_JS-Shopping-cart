@@ -3,6 +3,8 @@ import { RiShoppingCart2Fill, RiSearch2Line } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import Appcontext from "./Context";
 
+// border bottom addition need to do
+
 const Nav = () => {
   const { value, setValue, items } = useContext(Appcontext);
 
