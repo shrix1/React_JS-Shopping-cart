@@ -1,5 +1,5 @@
 import React from "react";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import Appcontext from "./Context";
 import { RiTShirt2Line } from "react-icons/ri";
 
@@ -22,7 +22,6 @@ const Card = (props) => {
           <div>
             <h1>{props.name}</h1>
             <h1>$ {props.price}</h1>
-            {/* <h1>{props._id}</h1> */}
           </div>
 
           {false ? (
@@ -42,6 +41,7 @@ const Card = (props) => {
         bg-sky-200 rounded hover:bg-sky-500"
               onClick={() => {
                 addCart(props.name, props.price, props._id);
+                // setBtn(props._id);
               }}
               title="add to cart"
             >
