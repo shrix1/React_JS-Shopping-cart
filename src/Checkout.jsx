@@ -26,7 +26,8 @@ const Checkout = () => {
             <span className="underline font-bold">
               $
               {items.reduce((acc, curr) => {
-                return acc + curr.price;
+                let total = acc + curr.price;
+                return total;
               }, 0)}
             </span>
           </h1>
@@ -35,6 +36,7 @@ const Checkout = () => {
             mt-5 text-xl w-[120px] h-[35px] font-semibold leading-tight
              tracking-wide
             "
+            onClick={() => alert("payment feature not yet added")}
           >
             Pay now
           </button>
@@ -43,8 +45,7 @@ const Checkout = () => {
         {/*--------------------cartList----------------------*/}
         <div
           className="lg:flex justify-between gap-1 flex-wrap lg:max-h-[1000px]
-        lg:border-2 border-sky-200 lg:w-[1000px] rounded-md 
-        lg:min-h-[700px]"
+        lg:border-2 border-sky-200 lg:w-[1000px] rounded-md lg:min-h-[700px]"
         >
           {items.length === 0 ? (
             <h1

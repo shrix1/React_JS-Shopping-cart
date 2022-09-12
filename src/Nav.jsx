@@ -40,16 +40,16 @@ const Nav = () => {
             placeholder="search"
             className="p-1 font-pop border-2 w-[200px] m-auto
             rounded-md border-sky-300 outline-none hover:border-gray-500
-            pr-3 "
+            pr-3 border-b-sky-600 border-b-3"
             onChange={(e) => setValue(e.target.value)}
             value={value}
             title="search items"
           />
 
-          <RiSearch2Line
+          {/* <RiSearch2Line
             className="absolute lg:right-[390px]
-          right-[160px] mt-[9px] text-gray-600"
-          />
+          right-[105px] mt-[9px] text-gray-600"
+          /> */}
         </section>
       </main>
     </>
