@@ -2,9 +2,24 @@ import React from "react";
 import { useContext } from "react";
 import Appcontext from "./Context";
 import { RiTShirt2Line } from "react-icons/ri";
+import { useState } from "react";
 
 const Card = (props) => {
-  const { addCart, removeItems } = useContext(Appcontext);
+  const { addCart, removeItems, items } = useContext(Appcontext);
+  const [btn, setBtn] = useState(false);
+
+  // const btnChange = (ids) => {
+  //   items.map((i) => {
+  //     if (i._id === ids) {
+  //       localStorage.setItem("btn", true);
+  //       setBtn(true);
+  //     } else {
+  //       localStorage.setItem("btn", false);
+  //       setBtn(false);
+  //     }
+  //   });
+  // };
+  // localStorage.clear();
 
   return (
     <>
@@ -24,12 +39,13 @@ const Card = (props) => {
             <h1>$ {props.price}</h1>
           </div>
 
-          {false ? (
+          {btn ? (
             <button
               className="p-1.5 w-[110px]
         bg-sky-500 rounded hover:bg-sky-200"
               onClick={() => {
                 removeItems(props._id);
+                setBtn(false);
               }}
               title="remove"
             >
@@ -41,7 +57,8 @@ const Card = (props) => {
         bg-sky-200 rounded hover:bg-sky-500"
               onClick={() => {
                 addCart(props.name, props.price, props._id);
-                // setBtn(props._id);
+                // btnChange(props._id);
+                setBtn(true);
               }}
               title="add to cart"
             >
