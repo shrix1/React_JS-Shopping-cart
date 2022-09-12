@@ -53,7 +53,7 @@ const Checkout = () => {
             justify-center lg:w-[1000px]"
             >
               Your cart is&nbsp;
-              <span className="font-bold underline">empty</span>
+              <span className="font-bold underline">Empty</span>
             </h1>
           ) : (
             items.map((item, index) => {
@@ -71,7 +71,6 @@ const Checkout = () => {
                     <div className="font-bold">
                       <h1>{item.name}</h1>
                       <h1>$ {item.price}</h1>
-                      {/* <h1>{item._id} </h1> */}
                     </div>
 
                     <button
