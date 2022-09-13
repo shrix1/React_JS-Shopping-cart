@@ -5,6 +5,12 @@ import { RiTShirt2Line } from "react-icons/ri";
 const Checkout = () => {
   const { items, removeItems } = useContext(Appcontext);
 
+  const totalCost = () => {
+    return items.reduce((acc, curr) => {
+      return acc + curr.price;
+    }, 0);
+  };
+
   return (
     <>
       <h1 className="text-2xl text-center font-pop font-bold mt-9 lg:mb-9">
@@ -23,20 +29,14 @@ const Checkout = () => {
         >
           <h1 className="text-center text-2xl mt-6">
             Total price is{" "}
-            <span className="underline font-bold">
-              $
-              {items.reduce((acc, curr) => {
-                let total = acc + curr.price;
-                return total;
-              }, 0)}
-            </span>
+            <span className="underline font-bold">${totalCost()}</span>
           </h1>
           <button
             className="p-1 bg-sky-500 rounded hover:bg-sky-200 
             mt-5 text-xl w-[120px] h-[35px] font-semibold leading-tight
              tracking-wide
             "
-            onClick={() => alert("payment feature not yet added")}
+            onClick={() => alert(`Total is $${totalCost()}`)}
           >
             Pay now
           </button>
