@@ -31,6 +31,7 @@ const Checkout = () => {
             Total price is{" "}
             <span className="underline font-bold">${totalCost()}</span>
           </h1>
+
           <button
             className="p-1 bg-sky-500 rounded hover:bg-sky-200 
             mt-5 text-xl w-[120px] h-[35px] font-semibold leading-tight
