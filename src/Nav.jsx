@@ -1,5 +1,5 @@
 import { React, useContext } from "react";
-import { RiShoppingCart2Fill, RiSearch2Line } from "react-icons/ri";
+import { RiShoppingCart2Fill } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import Appcontext from "./Context";
 
