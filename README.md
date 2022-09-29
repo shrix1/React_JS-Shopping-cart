@@ -1,3 +1,1 @@
-## learned Context api
-
-# Shoping cart app
+# Shopping cart app
