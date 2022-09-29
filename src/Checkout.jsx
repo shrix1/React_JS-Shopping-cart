@@ -37,7 +37,9 @@ const Checkout = () => {
             mt-5 text-xl w-[120px] h-[35px] font-semibold leading-tight
              tracking-wide
             "
-            onClick={() => alert(`Total is $${totalCost()}`)}
+            onClick={() =>
+              alert(`Total is $${totalCost()} and need to add API for PAYMENT`)
+            }
           >
             Pay now
           </button>
