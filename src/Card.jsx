@@ -3,10 +3,23 @@ import { useContext } from "react";
 import Appcontext from "./Context";
 import { RiTShirt2Line } from "react-icons/ri";
 import { useState } from "react";
+import { products } from "./Mainproducts";
 
 const Card = (props) => {
   const { addCart, removeItems } = useContext(Appcontext);
   const [btn, setBtn] = useState(false); //issues in it
+
+  const addingItems = (ids) => {
+    addCart(props.name, props.price, props._id);
+    setBtn(true);
+    // products.map((i) => i._id === ids && [...i, { isAdd: !i.isAdd }]);
+    // console.log(products);
+  };
+
+  const removingItems = () => {
+    removeItems(props._id);
+    setBtn(false);
+  };
 
   return (
     <>
@@ -26,26 +39,22 @@ const Card = (props) => {
             <h1>$ {props.price}</h1>
           </div>
 
-          {btn ? (
+          {props.isAdd || btn ? (
+            //reomve
             <button
               className="p-1.5 w-[110px]
-        bg-sky-500 rounded hover:bg-sky-200"
-              onClick={() => {
-                removeItems(props._id);
-                setBtn(false);
-              }}
+             bg-sky-500 rounded hover:bg-sky-200"
+              onClick={() => removingItems(props._id)}
               title="remove"
             >
               remove
             </button>
           ) : (
+            //add
             <button
               className="p-1.5 w-[110px]
-        bg-sky-200 rounded hover:bg-sky-500"
-              onClick={() => {
-                addCart(props.name, props.price, props._id);
-                setBtn(true);
-              }}
+             bg-sky-200 rounded hover:bg-sky-500"
+              onClick={() => addingItems(props._id)}
               title="add to cart"
             >
               Add to cart

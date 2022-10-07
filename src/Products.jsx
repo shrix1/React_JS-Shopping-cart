@@ -1,41 +1,10 @@
 import Card from "./Card";
 import { useContext } from "react";
 import Appcontext from "./Context";
+import { products } from "./Mainproducts";
 
 const Products = () => {
   const { value } = useContext(Appcontext);
-  const products = [
-    {
-      name: "Tshirt",
-      price: 100,
-      _id: 0,
-    },
-    {
-      name: "Shirt",
-      price: 200,
-      _id: 1,
-    },
-    {
-      name: "Vest",
-      price: 300,
-      _id: 2,
-    },
-    {
-      name: "Pant",
-      price: 400,
-      _id: 3,
-    },
-    {
-      name: "Inner Wear",
-      price: 500,
-      _id: 4,
-    },
-    {
-      name: "shorts",
-      price: 600,
-      _id: 5,
-    },
-  ];
 
   return (
     <>
@@ -45,12 +14,23 @@ const Products = () => {
           .filter((prod) => {
             if (value === "") {
               return prod;
-            } else if (value.toLowerCase().includes(prod.name.toLowerCase())) {
+            } else if (
+              value
+                .toLowerCase()
+                .replaceAll(" ", "")
+                .includes(prod.name.toLowerCase().replaceAll(" ", ""))
+            ) {
               return prod;
             }
           })
           .map((p, index) => (
-            <Card name={p.name} key={index} price={p.price} _id={p._id} />
+            <Card
+              name={p.name}
+              key={index}
+              price={p.price}
+              _id={p._id}
+              isAdd={p.isAdd}
+            />
           ))}
       </div>
     </>
