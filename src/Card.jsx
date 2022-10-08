@@ -3,7 +3,7 @@ import { useContext } from "react";
 import Appcontext from "./Context";
 import { RiTShirt2Line } from "react-icons/ri";
 import { useState } from "react";
-import { products } from "./Mainproducts";
+// import { products } from "./Mainproducts";
 
 const Card = (props) => {
   const { addCart, removeItems } = useContext(Appcontext);
@@ -39,7 +39,7 @@ const Card = (props) => {
             <h1>$ {props.price}</h1>
           </div>
 
-          {props.isAdd || btn ? (
+          {btn ? (
             //reomve
             <button
               className="p-1.5 w-[110px]

@@ -20,25 +20,23 @@ function App() {
 
   return (
     <>
-      <div>
-        <Appcontext.Provider
-          value={{
-            items,
-            addCart,
-            removeItems,
-            value,
-            setValue,
-          }}
-        >
-          <BrowserRouter>
-            <Nav />
-            <Routes>
-              <Route path="/" element={<Products />} />
-              <Route path="/checkout" element={<Checkout />} />
-            </Routes>
-          </BrowserRouter>
-        </Appcontext.Provider>
-      </div>
+      <Appcontext.Provider
+        value={{
+          items,
+          addCart,
+          removeItems,
+          value,
+          setValue,
+        }}
+      >
+        <BrowserRouter>
+          <Nav />
+          <Routes>
+            <Route path="/" element={<Products />} />
+            <Route path="/checkout" element={<Checkout />} />
+          </Routes>
+        </BrowserRouter>
+      </Appcontext.Provider>
     </>
   );
 }
