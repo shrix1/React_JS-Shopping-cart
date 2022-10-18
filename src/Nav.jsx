@@ -36,7 +36,7 @@ const Nav = () => {
         {/* .search */}
         <section className="text-center lg:text-justify flex">
           <input
-            type="text"
+            type="search"
             placeholder="search"
             className="p-1 font-pop border-2 w-[200px] m-auto
             rounded-md border-sky-300 outline-none hover:border-gray-500
